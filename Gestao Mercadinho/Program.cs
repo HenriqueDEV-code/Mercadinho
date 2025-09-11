@@ -12,6 +12,7 @@ namespace Gestao_Mercadinho
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new ViewModel.home());
+
         }
     }
 }
