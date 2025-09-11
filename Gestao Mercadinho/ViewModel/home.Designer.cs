@@ -28,29 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home));
             panelMenu = new Panel();
+            btnEmpresa = new Button();
             btnProdutos = new Button();
+            btnPDV = new Button();
             panelLogo = new Panel();
-            panel2 = new Panel();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            pictureBox1 = new PictureBox();
+            paneltitleBar = new Panel();
+            LB_Title = new Label();
+            panelDesktop = new Panel();
             panelMenu.SuspendLayout();
+            panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            paneltitleBar.SuspendLayout();
             SuspendLayout();
             // 
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(51, 51, 76);
-            panelMenu.Controls.Add(button3);
-            panelMenu.Controls.Add(button2);
-            panelMenu.Controls.Add(button1);
+            panelMenu.Controls.Add(btnEmpresa);
             panelMenu.Controls.Add(btnProdutos);
+            panelMenu.Controls.Add(btnPDV);
             panelMenu.Controls.Add(panelLogo);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(220, 580);
             panelMenu.TabIndex = 0;
+            // 
+            // btnEmpresa
+            // 
+            btnEmpresa.BackgroundImageLayout = ImageLayout.None;
+            btnEmpresa.Dock = DockStyle.Top;
+            btnEmpresa.FlatAppearance.BorderSize = 0;
+            btnEmpresa.FlatStyle = FlatStyle.Flat;
+            btnEmpresa.ForeColor = Color.White;
+            btnEmpresa.Image = (Image)resources.GetObject("btnEmpresa.Image");
+            btnEmpresa.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEmpresa.Location = new Point(0, 206);
+            btnEmpresa.Name = "btnEmpresa";
+            btnEmpresa.Padding = new Padding(12, 0, 0, 0);
+            btnEmpresa.Size = new Size(220, 63);
+            btnEmpresa.TabIndex = 3;
+            btnEmpresa.Text = "      Dados da Empresa";
+            btnEmpresa.TextAlign = ContentAlignment.MiddleLeft;
+            btnEmpresa.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnEmpresa.UseVisualStyleBackColor = true;
+            btnEmpresa.Click += btnEmpresa_Click;
             // 
             // btnProdutos
             // 
@@ -59,114 +84,120 @@
             btnProdutos.FlatAppearance.BorderSize = 0;
             btnProdutos.FlatStyle = FlatStyle.Flat;
             btnProdutos.ForeColor = Color.White;
-            btnProdutos.Image = Properties.Resources.icons8_comprar_32;
+            btnProdutos.Image = (Image)resources.GetObject("btnProdutos.Image");
             btnProdutos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProdutos.Location = new Point(0, 80);
+            btnProdutos.Location = new Point(0, 143);
             btnProdutos.Name = "btnProdutos";
             btnProdutos.Padding = new Padding(12, 0, 0, 0);
             btnProdutos.Size = new Size(220, 63);
-            btnProdutos.TabIndex = 1;
-            btnProdutos.Text = "      PDV";
+            btnProdutos.TabIndex = 2;
+            btnProdutos.Text = "      Produtos";
             btnProdutos.TextAlign = ContentAlignment.MiddleLeft;
             btnProdutos.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnProdutos.UseVisualStyleBackColor = true;
+            btnProdutos.Click += btnProdutos_Click;
+            // 
+            // btnPDV
+            // 
+            btnPDV.BackgroundImageLayout = ImageLayout.None;
+            btnPDV.Dock = DockStyle.Top;
+            btnPDV.FlatAppearance.BorderSize = 0;
+            btnPDV.FlatStyle = FlatStyle.Flat;
+            btnPDV.ForeColor = Color.White;
+            btnPDV.Image = Properties.Resources.icons8_comprar_32;
+            btnPDV.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPDV.Location = new Point(0, 80);
+            btnPDV.Name = "btnPDV";
+            btnPDV.Padding = new Padding(12, 0, 0, 0);
+            btnPDV.Size = new Size(220, 63);
+            btnPDV.TabIndex = 1;
+            btnPDV.Text = "      PDV";
+            btnPDV.TextAlign = ContentAlignment.MiddleLeft;
+            btnPDV.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnPDV.UseVisualStyleBackColor = true;
+            btnPDV.Click += btnPDV_Click;
             // 
             // panelLogo
             // 
             panelLogo.BackColor = Color.FromArgb(39, 39, 58);
+            panelLogo.Controls.Add(pictureBox1);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
             panelLogo.Name = "panelLogo";
             panelLogo.Size = new Size(220, 80);
             panelLogo.TabIndex = 0;
             // 
-            // panel2
+            // pictureBox1
             // 
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(220, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1157, 80);
-            panel2.TabIndex = 1;
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.Image = Properties.Resources.icons8_loja_60;
+            pictureBox1.Location = new Point(71, 9);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(60, 60);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
-            // button1
+            // paneltitleBar
             // 
-            button1.BackgroundImageLayout = ImageLayout.None;
-            button1.Dock = DockStyle.Top;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Image = Properties.Resources.icons8_comprar_32;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(0, 143);
-            button1.Name = "button1";
-            button1.Padding = new Padding(12, 0, 0, 0);
-            button1.Size = new Size(220, 63);
-            button1.TabIndex = 2;
-            button1.Text = "      Estoque";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = true;
+            paneltitleBar.BackColor = Color.FromArgb(112, 81, 167);
+            paneltitleBar.Controls.Add(LB_Title);
+            paneltitleBar.Dock = DockStyle.Top;
+            paneltitleBar.Location = new Point(220, 0);
+            paneltitleBar.Name = "paneltitleBar";
+            paneltitleBar.Size = new Size(1157, 80);
+            paneltitleBar.TabIndex = 1;
             // 
-            // button2
+            // LB_Title
             // 
-            button2.BackgroundImageLayout = ImageLayout.None;
-            button2.Dock = DockStyle.Top;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.White;
-            button2.Image = Properties.Resources.icons8_comprar_32;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(0, 206);
-            button2.Name = "button2";
-            button2.Padding = new Padding(12, 0, 0, 0);
-            button2.Size = new Size(220, 63);
-            button2.TabIndex = 3;
-            button2.Text = "      Cadastro de Produtos";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button2.UseVisualStyleBackColor = true;
+            LB_Title.Anchor = AnchorStyles.None;
+            LB_Title.AutoSize = true;
+            LB_Title.Font = new Font("Arial", 18F);
+            LB_Title.ForeColor = Color.White;
+            LB_Title.Location = new Point(563, 22);
+            LB_Title.Name = "LB_Title";
+            LB_Title.Size = new Size(83, 27);
+            LB_Title.TabIndex = 0;
+            LB_Title.Text = "HOME";
             // 
-            // button3
+            // panelDesktop
             // 
-            button3.BackgroundImageLayout = ImageLayout.None;
-            button3.Dock = DockStyle.Top;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.White;
-            button3.Image = Properties.Resources.icons8_comprar_32;
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(0, 269);
-            button3.Name = "button3";
-            button3.Padding = new Padding(12, 0, 0, 0);
-            button3.Size = new Size(220, 63);
-            button3.TabIndex = 4;
-            button3.Text = "      Adicionar mais Estoque";
-            button3.TextAlign = ContentAlignment.MiddleLeft;
-            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button3.UseVisualStyleBackColor = true;
+            panelDesktop.Dock = DockStyle.Fill;
+            panelDesktop.Location = new Point(220, 80);
+            panelDesktop.Name = "panelDesktop";
+            panelDesktop.Size = new Size(1157, 500);
+            panelDesktop.TabIndex = 2;
             // 
             // home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1377, 580);
-            Controls.Add(panel2);
+            Controls.Add(panelDesktop);
+            Controls.Add(paneltitleBar);
             Controls.Add(panelMenu);
             Margin = new Padding(3, 2, 3, 2);
             Name = "home";
             Text = "home";
             panelMenu.ResumeLayout(false);
+            panelLogo.ResumeLayout(false);
+            panelLogo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            paneltitleBar.ResumeLayout(false);
+            paneltitleBar.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panelMenu;
-        private Panel panel2;
+        private Panel paneltitleBar;
         private Panel panelLogo;
+        private Button btnPDV;
         private Button btnProdutos;
-        private Button button2;
-        private Button button1;
-        private Button button3;
+        private Button btnEmpresa;
+        private Label LB_Title;
+        private PictureBox pictureBox1;
+        private Panel panelDesktop;
     }
 }
