@@ -178,6 +178,7 @@
             Controls.Add(panelMenu);
             Margin = new Padding(3, 2, 3, 2);
             Name = "home";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "home";
             panelMenu.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
