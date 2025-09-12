@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gestao_Mercadinho.Model;
 
 namespace Gestao_Mercadinho.Forms
 {
@@ -15,6 +9,41 @@ namespace Gestao_Mercadinho.Forms
         public Produtos()
         {
             InitializeComponent();
+        }
+
+
+
+
+
+
+
+
+
+
+        // Metodo para testar a conexao com o banco de dados
+        public static bool TestarConexao()
+        {
+            try
+            {
+                var conexaoBanco = new DBConfig();
+                using (var conn = conexaoBanco.GetConnection())
+                {
+                    conn.Open();
+                    MessageBox.Show("Conexao bem sucedida: ");
+                    return true; // Conexão bem-sucedida
+                }
+            }
+            catch (Exception ex)
+            {
+                // Você pode exibir a mensagem de erro ou logar, se preferir
+                Console.WriteLine("Erro ao conectar: " + ex.Message);
+                return false; // Falha na conexão
+            }
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+           TestarConexao(); 
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Gestao_Mercadinho.ViewModel
     public partial class home : Form
     {
         private Form activeForm;
+         
         public home()
         {
             InitializeComponent();
