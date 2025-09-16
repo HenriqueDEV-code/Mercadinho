@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Gestao_Mercadinho.ViewModel
 {
-    public partial class home : Form
+    public partial class Home : Form
     {
-        private Form activeForm;
+        private Form? activeForm;
          
-        public home()
+        public Home()
         {
             InitializeComponent();
         }
@@ -47,9 +47,6 @@ namespace Gestao_Mercadinho.ViewModel
             OpenChildForm(new Forms.Produtos());
         }
 
-        private void btnEmpresa_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.Empresa());
-        }
+        
     }
 }

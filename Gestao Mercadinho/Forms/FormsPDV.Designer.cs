@@ -38,14 +38,20 @@
             LB_Title = new Label();
             TB_Codigo_Produto = new TextBox();
             panel3 = new Panel();
+            btn_AddProduto = new Button();
             label6 = new Label();
             TB_Subtotal = new TextBox();
             label5 = new Label();
             TB_Nome_Mercadoria = new TextBox();
             label4 = new Label();
             TB_Volume = new TextBox();
+            DGV_PDV = new DataGridView();
+            btnFinalizarVenda = new Button();
+            btnCancelarVenda = new Button();
+            lblAtalhos = new Label();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DGV_PDV).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -102,10 +108,10 @@
             // TB_PrecoUnit
             // 
             TB_PrecoUnit.BorderStyle = BorderStyle.FixedSingle;
-            TB_PrecoUnit.Font = new Font("Arial", 12F);
+            TB_PrecoUnit.Font = new Font("Arial", 20F);
             TB_PrecoUnit.Location = new Point(424, 37);
             TB_PrecoUnit.Name = "TB_PrecoUnit";
-            TB_PrecoUnit.Size = new Size(202, 26);
+            TB_PrecoUnit.Size = new Size(202, 38);
             TB_PrecoUnit.TabIndex = 4;
             TB_PrecoUnit.TextAlign = HorizontalAlignment.Right;
             // 
@@ -123,10 +129,10 @@
             // TB_Quantidade
             // 
             TB_Quantidade.BorderStyle = BorderStyle.FixedSingle;
-            TB_Quantidade.Font = new Font("Arial", 12F);
+            TB_Quantidade.Font = new Font("Arial", 20F);
             TB_Quantidade.Location = new Point(219, 37);
             TB_Quantidade.Name = "TB_Quantidade";
-            TB_Quantidade.Size = new Size(202, 26);
+            TB_Quantidade.Size = new Size(202, 38);
             TB_Quantidade.TabIndex = 2;
             TB_Quantidade.TextAlign = HorizontalAlignment.Right;
             // 
@@ -145,16 +151,17 @@
             // TB_Codigo_Produto
             // 
             TB_Codigo_Produto.BorderStyle = BorderStyle.FixedSingle;
-            TB_Codigo_Produto.Font = new Font("Arial", 12F);
+            TB_Codigo_Produto.Font = new Font("Arial", 20F);
             TB_Codigo_Produto.Location = new Point(12, 37);
             TB_Codigo_Produto.Name = "TB_Codigo_Produto";
-            TB_Codigo_Produto.Size = new Size(202, 26);
+            TB_Codigo_Produto.Size = new Size(202, 38);
             TB_Codigo_Produto.TabIndex = 0;
             TB_Codigo_Produto.TextAlign = HorizontalAlignment.Right;
             // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(64, 63, 63);
+            panel3.Controls.Add(btn_AddProduto);
             panel3.Controls.Add(label6);
             panel3.Controls.Add(TB_Subtotal);
             panel3.Controls.Add(label5);
@@ -167,12 +174,28 @@
             panel3.Size = new Size(401, 438);
             panel3.TabIndex = 2;
             // 
+            // btn_AddProduto
+            // 
+            btn_AddProduto.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btn_AddProduto.BackColor = Color.Yellow;
+            btn_AddProduto.FlatAppearance.BorderSize = 0;
+            btn_AddProduto.FlatStyle = FlatStyle.Flat;
+            btn_AddProduto.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            btn_AddProduto.ForeColor = Color.Black;
+            btn_AddProduto.Location = new Point(178, 376);
+            btn_AddProduto.Name = "btn_AddProduto";
+            btn_AddProduto.Size = new Size(208, 50);
+            btn_AddProduto.TabIndex = 8;
+            btn_AddProduto.Text = "Adicionar Produto";
+            btn_AddProduto.UseVisualStyleBackColor = false;
+            btn_AddProduto.Click += btn_AddProduto_Click;
+            // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 28F);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(9, 241);
+            label6.Location = new Point(12, 189);
             label6.Name = "label6";
             label6.Size = new Size(244, 43);
             label6.TabIndex = 7;
@@ -185,7 +208,7 @@
             TB_Subtotal.Enabled = false;
             TB_Subtotal.Font = new Font("Arial", 40F);
             TB_Subtotal.ForeColor = Color.White;
-            TB_Subtotal.Location = new Point(6, 287);
+            TB_Subtotal.Location = new Point(9, 235);
             TB_Subtotal.Name = "TB_Subtotal";
             TB_Subtotal.Size = new Size(364, 69);
             TB_Subtotal.TabIndex = 6;
@@ -228,7 +251,7 @@
             // 
             // TB_Volume
             // 
-            TB_Volume.BackColor = Color.FromArgb(46,46,46);
+            TB_Volume.BackColor = Color.FromArgb(46, 46, 46);
             TB_Volume.BorderStyle = BorderStyle.FixedSingle;
             TB_Volume.Enabled = false;
             TB_Volume.Font = new Font("Arial", 18F);
@@ -239,12 +262,69 @@
             TB_Volume.TabIndex = 2;
             TB_Volume.TextAlign = HorizontalAlignment.Right;
             // 
+            // DGV_PDV
+            // 
+            DGV_PDV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DGV_PDV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGV_PDV.Location = new Point(401, 97);
+            DGV_PDV.Name = "DGV_PDV";
+            DGV_PDV.Size = new Size(950, 382);
+            DGV_PDV.TabIndex = 3;
+            // 
+            // btnFinalizarVenda
+            // 
+            btnFinalizarVenda.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnFinalizarVenda.BackColor = Color.FromArgb(0, 133, 61);
+            btnFinalizarVenda.FlatAppearance.BorderSize = 0;
+            btnFinalizarVenda.FlatStyle = FlatStyle.Flat;
+            btnFinalizarVenda.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            btnFinalizarVenda.ForeColor = Color.White;
+            btnFinalizarVenda.Location = new Point(1105, 485);
+            btnFinalizarVenda.Name = "btnFinalizarVenda";
+            btnFinalizarVenda.Size = new Size(120, 50);
+            btnFinalizarVenda.TabIndex = 4;
+            btnFinalizarVenda.Text = "Finalizar";
+            btnFinalizarVenda.UseVisualStyleBackColor = false;
+            btnFinalizarVenda.Click += BtnFinalizarVenda_Click;
+            // 
+            // btnCancelarVenda
+            // 
+            btnCancelarVenda.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancelarVenda.BackColor = Color.FromArgb(220, 53, 69);
+            btnCancelarVenda.FlatAppearance.BorderSize = 0;
+            btnCancelarVenda.FlatStyle = FlatStyle.Flat;
+            btnCancelarVenda.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            btnCancelarVenda.ForeColor = Color.White;
+            btnCancelarVenda.Location = new Point(956, 485);
+            btnCancelarVenda.Name = "btnCancelarVenda";
+            btnCancelarVenda.Size = new Size(120, 50);
+            btnCancelarVenda.TabIndex = 5;
+            btnCancelarVenda.Text = "Cancelar";
+            btnCancelarVenda.UseVisualStyleBackColor = false;
+            btnCancelarVenda.Click += BtnCancelarVenda_Click;
+            // 
+            // lblAtalhos
+            // 
+            lblAtalhos.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            lblAtalhos.AutoSize = true;
+            lblAtalhos.Font = new Font("Segoe UI", 9F);
+            lblAtalhos.ForeColor = Color.Gray;
+            lblAtalhos.Location = new Point(401, 520);
+            lblAtalhos.Name = "lblAtalhos";
+            lblAtalhos.Size = new Size(279, 15);
+            lblAtalhos.TabIndex = 6;
+            lblAtalhos.Text = "F1: Finalizar | F2: Cancelar | F3: Código | ESC: Limpar";
+            // 
             // PDV
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1351, 535);
+            Controls.Add(lblAtalhos);
+            Controls.Add(btnCancelarVenda);
+            Controls.Add(btnFinalizarVenda);
+            Controls.Add(DGV_PDV);
             Controls.Add(panel3);
             Controls.Add(panel1);
             Name = "PDV";
@@ -253,7 +333,9 @@
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)DGV_PDV).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -274,5 +356,10 @@
         private TextBox TB_Subtotal;
         private Label label5;
         private TextBox TB_Nome_Mercadoria;
+        private DataGridView DGV_PDV;
+        private Button btnFinalizarVenda;
+        private Button btnCancelarVenda;
+        private Label lblAtalhos;
+        private Button btn_AddProduto;
     }
 }

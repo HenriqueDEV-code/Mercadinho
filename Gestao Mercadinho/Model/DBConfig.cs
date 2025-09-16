@@ -18,7 +18,7 @@ namespace Gestao_Mercadinho.Model
             // Vai ler o arquivo JSON
             var configText = File.ReadAllText("Config/Config.json");
             var config = JsonSerializer.Deserialize<ConfigModel>(configText);
-            _connectionString = config.ConnectionStrings["MercadinhoDB"];
+            _connectionString = config?.ConnectionStrings?["MercadinhoDB"] ?? throw new InvalidOperationException("String de conexão não encontrada no arquivo de configuração.");
         }
         public SqlConnection GetConnection()
         {
@@ -27,8 +27,8 @@ namespace Gestao_Mercadinho.Model
         // Classe auxiliar para deserializar o JSON
         public class ConfigModel
         {
-            public Dictionary<string, string> ConnectionStrings { get; set; }
-            public string ProviderName { get; set; }
+            public Dictionary<string, string> ConnectionStrings { get; set; } = new Dictionary<string, string>();
+            public string ProviderName { get; set; } = string.Empty;
         }
 
     }

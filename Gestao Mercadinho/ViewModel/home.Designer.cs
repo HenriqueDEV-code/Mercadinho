@@ -1,6 +1,6 @@
 ﻿namespace Gestao_Mercadinho.ViewModel
 {
-    partial class home
+    partial class Home
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             panelMenu = new Panel();
-            btnEmpresa = new Button();
             btnProdutos = new Button();
             btnPDV = new Button();
             panelLogo = new Panel();
@@ -47,35 +46,14 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(51, 51, 76);
-            panelMenu.Controls.Add(btnEmpresa);
             panelMenu.Controls.Add(btnProdutos);
             panelMenu.Controls.Add(btnPDV);
             panelMenu.Controls.Add(panelLogo);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(220, 580);
+            panelMenu.Size = new Size(220, 616);
             panelMenu.TabIndex = 0;
-            // 
-            // btnEmpresa
-            // 
-            btnEmpresa.BackgroundImageLayout = ImageLayout.None;
-            btnEmpresa.Dock = DockStyle.Top;
-            btnEmpresa.FlatAppearance.BorderSize = 0;
-            btnEmpresa.FlatStyle = FlatStyle.Flat;
-            btnEmpresa.ForeColor = Color.White;
-            btnEmpresa.Image = (Image)resources.GetObject("btnEmpresa.Image");
-            btnEmpresa.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEmpresa.Location = new Point(0, 206);
-            btnEmpresa.Name = "btnEmpresa";
-            btnEmpresa.Padding = new Padding(12, 0, 0, 0);
-            btnEmpresa.Size = new Size(220, 63);
-            btnEmpresa.TabIndex = 3;
-            btnEmpresa.Text = "      Dados da Empresa";
-            btnEmpresa.TextAlign = ContentAlignment.MiddleLeft;
-            btnEmpresa.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnEmpresa.UseVisualStyleBackColor = true;
-            btnEmpresa.Click += btnEmpresa_Click;
             // 
             // btnProdutos
             // 
@@ -145,7 +123,7 @@
             paneltitleBar.Dock = DockStyle.Top;
             paneltitleBar.Location = new Point(220, 0);
             paneltitleBar.Name = "paneltitleBar";
-            paneltitleBar.Size = new Size(1157, 80);
+            paneltitleBar.Size = new Size(1419, 80);
             paneltitleBar.TabIndex = 1;
             // 
             // LB_Title
@@ -154,7 +132,7 @@
             LB_Title.AutoSize = true;
             LB_Title.Font = new Font("Arial", 18F);
             LB_Title.ForeColor = Color.White;
-            LB_Title.Location = new Point(563, 22);
+            LB_Title.Location = new Point(694, 22);
             LB_Title.Name = "LB_Title";
             LB_Title.Size = new Size(83, 27);
             LB_Title.TabIndex = 0;
@@ -165,19 +143,19 @@
             panelDesktop.Dock = DockStyle.Fill;
             panelDesktop.Location = new Point(220, 80);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(1157, 500);
+            panelDesktop.Size = new Size(1419, 536);
             panelDesktop.TabIndex = 2;
             // 
-            // home
+            // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1377, 580);
+            ClientSize = new Size(1639, 616);
             Controls.Add(panelDesktop);
             Controls.Add(paneltitleBar);
             Controls.Add(panelMenu);
             Margin = new Padding(3, 2, 3, 2);
-            Name = "home";
+            Name = "Home";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "home";
             panelMenu.ResumeLayout(false);
@@ -196,9 +174,8 @@
         private Panel panelLogo;
         private Button btnPDV;
         private Button btnProdutos;
-        private Button btnEmpresa;
         private Label LB_Title;
         private PictureBox pictureBox1;
-        private Panel panelDesktop;
+        public Panel panelDesktop;
     }
 }
