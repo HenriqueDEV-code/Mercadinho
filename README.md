@@ -38,6 +38,7 @@ Clone o repositório:
 
 [git clone https://github.com/seuusuario/gestao-mercadinho.git](https://github.com/HenriqueDEV-code/Mercadinho.git)
 
+Va na pasta Inatalador e instala o .exe pelo o instalador que esta disponivel no repositorio.
 
 Abra a solução no Visual Studio 2022 (ou superior).
 
@@ -69,5 +70,6 @@ Projeto desenvolvido por Luis Henrique
 📧 Email: henriquebelotti09@gmail.com
 
 🔗 GitHub: HenriqueDEV-code
+
 
 
