@@ -18,27 +18,8 @@ Permite cadastrar, listar, pesquisar, atualizar estoque e realizar operações b
 ---
 
 ## 🗂 Estrutura do Projeto
-Gestao_Mercadinho/
-│
-├── Config/ # Configurações (ex.: Config.json)
-│
-├── Forms/ # Telas (WinForms)
-│ ├── FormsCadastrar.cs # Tela de cadastro de produtos
-│ ├── FormsPDV.cs # Tela de ponto de venda
-│ └── FormsProdutos.cs # Tela de listagem e gerenciamento de produtos
-│
-├── Model/ # Camada de acesso a dados e entidades
-│ ├── DBConfig.cs # Classe de conexão com o banco
-│ ├── ItemVenda.cs # Entidade de item de venda
-│ ├── Select.cs # Classe para SELECT
-│ └── Update.cs # Classe para UPDATE
-│
-├── Resources/ # Ícones e imagens usados na UI
-│
-├── ViewModel/ # Classes auxiliares para telas (ex.: Home)
-│
-├── Program.cs # Ponto de entrada da aplicação
-└── README.md # Este arquivo
+<img width="512" height="562" alt="image" src="https://github.com/user-attachments/assets/6b532500-6005-46da-a0e5-03f39aa971b7" />
+
 
 
 ---
@@ -51,4 +32,42 @@ Gestao_Mercadinho/
 ```csharp
 private const string ConnString = 
     "Data Source=.\\SQLEXPRESS;Initial Catalog=Banco_Unip;Persist Security Info=True;User ID=sa;Password=SuaSenha;Encrypt=False";
+
+▶️ Como Executar
+
+Clone o repositório:
+
+[git clone https://github.com/seuusuario/gestao-mercadinho.git](https://github.com/HenriqueDEV-code/Mercadinho.git)
+
+
+Abra a solução no Visual Studio 2022 (ou superior).
+
+Restaure pacotes NuGet (já usa Microsoft.Data.SqlClient).
+
+Configure o banco de dados no DBConfig.cs ou Config.json.
+
+Execute o projeto (F5).
+
+🎨 Interface
+
+Tela de Produtos: mostra lista de produtos, botões para incrementar/decrementar e busca.
+
+Tela de Cadastro: adiciona novos produtos.
+
+Tela PDV: (exemplo de ponto de venda simples).
+
+📦 Dependências
+
+.NET 6 ou superior
+
+SQL Server (Express ou Developer)
+
+Pacote NuGet: Microsoft.Data.SqlClient
+
+👨‍💻 Autor
+
+Projeto desenvolvido por Luis Henrique
+📧 Email: henriquebelotti09@gmail.com
+
+🔗 GitHub: HenriqueDEV-code
 
