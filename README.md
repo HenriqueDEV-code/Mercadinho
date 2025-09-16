@@ -9,8 +9,7 @@ Permite cadastrar, listar, pesquisar, atualizar estoque e realizar operações b
 
 - ✅ Cadastro de produtos (nome, preço, quantidade)  
 - ✅ Pesquisa de produtos por nome ou descrição  
-- ✅ Incremento e decremento da quantidade direto na tabela (`+1` / `-1`)  
-- ✅ Atualização de estoque com verificação para não permitir valores negativos  
+- ✅ Incremento e decremento da quantidade direto na tabela (`+1` / `-1`)
 - ✅ Conexão com banco SQL Server usando `Microsoft.Data.SqlClient`  
 - ✅ Estrutura em camadas: **Forms**, **Model**, **Config**, **Resources**  
 - ✅ Interface simples e intuitiva  
@@ -70,4 +69,5 @@ Projeto desenvolvido por Luis Henrique
 📧 Email: henriquebelotti09@gmail.com
 
 🔗 GitHub: HenriqueDEV-code
+
 
