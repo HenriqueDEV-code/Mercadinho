@@ -19,7 +19,9 @@ namespace Gestao_Mercadinho.Forms
 {
     public partial class PDV : Form
     {
+        // Lista para armazenar os itens da venda atual
         private List<ItemVenda> itensVenda = new List<ItemVenda>();
+        // Total da venda atual
         private decimal totalVenda = 0;
 
         public PDV()
@@ -53,6 +55,8 @@ namespace Gestao_Mercadinho.Forms
             TB_Codigo_Produto.Focus();
         }
 
+
+        // Configurar DataGridView para exibir os itens da venda
         private void ConfigurarDataGridView()
         {
             DGV_PDV.AutoGenerateColumns = false;
@@ -86,6 +90,8 @@ namespace Gestao_Mercadinho.Forms
             DGV_PDV.CellDoubleClick += DGV_PDV_CellDoubleClick!;
         }
 
+
+        // Eventos de teclado para facilitar a navegação
         private void TB_Codigo_Produto_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -111,6 +117,7 @@ namespace Gestao_Mercadinho.Forms
             }
         }
 
+        //  Métodos principais do PDV
         private void BuscarProduto()
         {
             if (string.IsNullOrWhiteSpace(TB_Codigo_Produto.Text))
@@ -122,6 +129,7 @@ namespace Gestao_Mercadinho.Forms
 
             try
             {
+                // Buscar produto no banco de dados
                 var conexaoBanco = new DBConfig();
                 using (var conn = conexaoBanco.GetConnection())
                 {
@@ -165,7 +173,7 @@ namespace Gestao_Mercadinho.Forms
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        // Calcular o total do item com base no preço unitário e quantidade
         private void CalcularTotalItem()
         {
             try
@@ -187,6 +195,7 @@ namespace Gestao_Mercadinho.Forms
             }
         }
 
+        // Adicionar item à lista de venda
         private void AdicionarItem()
         {
             if (string.IsNullOrWhiteSpace(TB_Codigo_Produto.Text) ||
@@ -237,6 +246,7 @@ namespace Gestao_Mercadinho.Forms
             TB_Codigo_Produto.Focus();
         }
 
+        // Atualizar DataGridView com os itens da venda
         private void AtualizarDataGridView()
         {
             DGV_PDV.Rows.Clear();
@@ -252,13 +262,13 @@ namespace Gestao_Mercadinho.Forms
                 );
             }
         }
-
+        // Calcular o total da venda somando os totais dos itens
         private void CalcularTotalVenda()
         {
             totalVenda = itensVenda.Sum(i => i.TotalItem);
             TB_Subtotal.Text = totalVenda.ToString("C2");
         }
-
+        // Limpar os campos de produto para a próxima entrada
         private void LimparCamposProduto()
         {
             TB_Codigo_Produto.Clear();
@@ -267,7 +277,7 @@ namespace Gestao_Mercadinho.Forms
             TB_Quantidade.Text = "1";
             TB_Total_Item.Text = "R$ 0,00";
         }
-
+        // Finalizar a venda, atualizar o estoque e limpar a venda atual
         private void FinalizarVenda()
         {
             if (itensVenda.Count == 0)
@@ -322,6 +332,7 @@ namespace Gestao_Mercadinho.Forms
             }
         }
 
+        // Cancelar a venda atual
         private void CancelarVenda()
         {
             var resultado = MessageBox.Show("Cancelar venda atual?", "Confirmar",
@@ -337,16 +348,19 @@ namespace Gestao_Mercadinho.Forms
             }
         }
 
+        // Eventos de clique dos botões
         private void BtnFinalizarVenda_Click(object sender, EventArgs e)
         {
             FinalizarVenda();
         }
 
+        // Evento de clique do botão Cancelar Venda
         private void BtnCancelarVenda_Click(object sender, EventArgs e)
         {
             CancelarVenda();
         }
 
+        // Evento de duplo clique na DataGridView para remover item
         private void DGV_PDV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.RowIndex < itensVenda.Count)
@@ -363,6 +377,7 @@ namespace Gestao_Mercadinho.Forms
             }
         }
 
+        // Atalhos de teclado para ações rápidas
         private void PDV_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -386,99 +401,9 @@ namespace Gestao_Mercadinho.Forms
                     break;
             }
         }
+       
 
-        private void btn_AddProduto_Click(object sender, EventArgs e)
-        {
-            // Verificar se o código do produto foi informado
-            if (string.IsNullOrWhiteSpace(TB_Codigo_Produto.Text))
-            {
-                MessageBox.Show("Por favor, informe o código do produto.", "Aviso", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TB_Codigo_Produto.Focus();
-                return;
-            }
-
-            // Verificar se a quantidade foi informada
-            if (string.IsNullOrWhiteSpace(TB_Quantidade.Text) || !int.TryParse(TB_Quantidade.Text, out int quantidade) || quantidade <= 0)
-            {
-                MessageBox.Show("Por favor, informe uma quantidade válida.", "Aviso", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                TB_Quantidade.Focus();
-                return;
-            }
-
-            try
-            {
-                // Buscar o produto no banco de dados
-                var conexaoBanco = new DBConfig();
-                using (var conn = conexaoBanco.GetConnection())
-                {
-                    conn.Open();
-                    var select = new Select();
-                    string query = "SELECT * FROM Produto WHERE id_produto = @id_produto";
-                    var resultados = select.ExecutarSelectComParametros(query, new Dictionary<string, object>
-                    {
-                        { "@id_produto", TB_Codigo_Produto.Text.Trim() }
-                    });
-
-                  
-                    if (resultados.Count == 0)
-                    {
-                        MessageBox.Show("Produto não encontrado.", "Aviso", 
-                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        TB_Codigo_Produto.Focus();
-                        return;
-                    }
-
-                    var produto = resultados[0];
-                    
-                    // Verificar se há estoque suficiente
-                    int estoqueDisponivel = Convert.ToInt32(produto["quantidade"]);
-                    if (quantidade > estoqueDisponivel)
-                    {
-                        MessageBox.Show($"Estoque insuficiente. Disponível: {estoqueDisponivel}", "Aviso", 
-                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        TB_Quantidade.Focus();
-                        return;
-                    }
-
-                    // Verificar se o produto já está na lista
-                    var itemExistente = itensVenda.FirstOrDefault(i => i.Codigo == TB_Codigo_Produto.Text.Trim());
-                    if (itemExistente != null)
-                    {
-                        // Se já existe, apenas atualizar a quantidade
-                        itemExistente.Quantidade += quantidade;
-                        itemExistente.TotalItem = itemExistente.Quantidade * itemExistente.PrecoUnitario;
-                    }
-                    else
-                    {
-                        // Criar novo item de venda
-                        var novoItem = new ItemVenda
-                        {
-                            Codigo = TB_Codigo_Produto.Text.Trim(),
-                            Nome = produto["nome"].ToString(),
-                            Quantidade = quantidade,
-                            PrecoUnitario = Convert.ToDecimal(produto["preco"]),
-                            TotalItem = quantidade * Convert.ToDecimal(produto["preco"])
-                        };
-                        
-                        itensVenda.Add(novoItem);
-                    }
-
-                    // Atualizar a interface
-                    AtualizarDataGridView();
-                    CalcularTotalVenda();
-                    LimparCamposProduto();
-                    TB_Codigo_Produto.Focus();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao adicionar produto: {ex.Message}", "Erro", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+       
         
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PDV));
             panel1 = new Panel();
             label3 = new Label();
             TB_Total_Item = new TextBox();
@@ -38,7 +39,6 @@
             LB_Title = new Label();
             TB_Codigo_Produto = new TextBox();
             panel3 = new Panel();
-            btn_AddProduto = new Button();
             label6 = new Label();
             TB_Subtotal = new TextBox();
             label5 = new Label();
@@ -161,7 +161,6 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(64, 63, 63);
-            panel3.Controls.Add(btn_AddProduto);
             panel3.Controls.Add(label6);
             panel3.Controls.Add(TB_Subtotal);
             panel3.Controls.Add(label5);
@@ -173,22 +172,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(401, 438);
             panel3.TabIndex = 2;
-            // 
-            // btn_AddProduto
-            // 
-            btn_AddProduto.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btn_AddProduto.BackColor = Color.Yellow;
-            btn_AddProduto.FlatAppearance.BorderSize = 0;
-            btn_AddProduto.FlatStyle = FlatStyle.Flat;
-            btn_AddProduto.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            btn_AddProduto.ForeColor = Color.Black;
-            btn_AddProduto.Location = new Point(178, 376);
-            btn_AddProduto.Name = "btn_AddProduto";
-            btn_AddProduto.Size = new Size(208, 50);
-            btn_AddProduto.TabIndex = 8;
-            btn_AddProduto.Text = "Adicionar Produto";
-            btn_AddProduto.UseVisualStyleBackColor = false;
-            btn_AddProduto.Click += btn_AddProduto_Click;
             // 
             // label6
             // 
@@ -279,7 +262,7 @@
             btnFinalizarVenda.FlatStyle = FlatStyle.Flat;
             btnFinalizarVenda.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             btnFinalizarVenda.ForeColor = Color.White;
-            btnFinalizarVenda.Location = new Point(1105, 485);
+            btnFinalizarVenda.Location = new Point(1105, 482);
             btnFinalizarVenda.Name = "btnFinalizarVenda";
             btnFinalizarVenda.Size = new Size(120, 50);
             btnFinalizarVenda.TabIndex = 4;
@@ -295,7 +278,7 @@
             btnCancelarVenda.FlatStyle = FlatStyle.Flat;
             btnCancelarVenda.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             btnCancelarVenda.ForeColor = Color.White;
-            btnCancelarVenda.Location = new Point(956, 485);
+            btnCancelarVenda.Location = new Point(956, 482);
             btnCancelarVenda.Name = "btnCancelarVenda";
             btnCancelarVenda.Size = new Size(120, 50);
             btnCancelarVenda.TabIndex = 5;
@@ -311,9 +294,9 @@
             lblAtalhos.ForeColor = Color.Gray;
             lblAtalhos.Location = new Point(401, 520);
             lblAtalhos.Name = "lblAtalhos";
-            lblAtalhos.Size = new Size(279, 15);
+            lblAtalhos.Size = new Size(418, 15);
             lblAtalhos.TabIndex = 6;
-            lblAtalhos.Text = "F1: Finalizar | F2: Cancelar | F3: Código | ESC: Limpar";
+            lblAtalhos.Text = "F1: Finalizar | F2: Cancelar | F3: Código | ESC: Limpar |Enter: Confirmar Compra";
             // 
             // PDV
             // 
@@ -327,6 +310,7 @@
             Controls.Add(DGV_PDV);
             Controls.Add(panel3);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "PDV";
             Text = "PDV";
             panel1.ResumeLayout(false);
@@ -360,6 +344,5 @@
         private Button btnFinalizarVenda;
         private Button btnCancelarVenda;
         private Label lblAtalhos;
-        private Button btn_AddProduto;
     }
 }

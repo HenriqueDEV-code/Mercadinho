@@ -9,10 +9,16 @@ using System.Text.Json;
 
 namespace Gestao_Mercadinho.Model
 {
+    // / <summary>
+    // / Classe para gerenciar a configuração do banco de dados e fornecer conexões SQL
+    // / </summary>
     public class DBConfig
     {
+        // String de conexão lida do arquivo JSON
         private readonly string _connectionString;
 
+
+        // Construtor que lê a configuração do arquivo JSON
         public DBConfig()
         {
             // Vai ler o arquivo JSON
@@ -20,6 +26,8 @@ namespace Gestao_Mercadinho.Model
             var config = JsonSerializer.Deserialize<ConfigModel>(configText);
             _connectionString = config?.ConnectionStrings?["MercadinhoDB"] ?? throw new InvalidOperationException("String de conexão não encontrada no arquivo de configuração.");
         }
+
+        // Método para obter uma nova conexão SQL
         public SqlConnection GetConnection()
         {
             return new SqlConnection(_connectionString);

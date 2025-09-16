@@ -33,7 +33,6 @@
             btn_Pesquisa_Busca = new Button();
             btnAdicionar = new Button();
             DGV_Lista_Produtos = new DataGridView();
-            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)DGV_Lista_Produtos).BeginInit();
             SuspendLayout();
             // 
@@ -89,35 +88,16 @@
             DGV_Lista_Produtos.Size = new Size(1232, 388);
             DGV_Lista_Produtos.TabIndex = 10;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.Blue;
-            button1.BackgroundImageLayout = ImageLayout.None;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.Font = new Font("Segoe UI", 15F);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(280, 21);
-            button1.Name = "button1";
-            button1.Padding = new Padding(12, 0, 0, 0);
-            button1.Size = new Size(287, 63);
-            button1.TabIndex = 11;
-            button1.Text = "      Adicionar quantidade";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = false;
-            // 
             // Produtos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1351, 535);
-            Controls.Add(button1);
             Controls.Add(DGV_Lista_Produtos);
             Controls.Add(btnAdicionar);
             Controls.Add(btn_Pesquisa_Busca);
             Controls.Add(TB_Busca);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Produtos";
             Text = "Produtos";
             ((System.ComponentModel.ISupportInitialize)DGV_Lista_Produtos).EndInit();
@@ -130,6 +110,5 @@
         private Button btn_Pesquisa_Busca;
         private Button btnAdicionar;
         private DataGridView DGV_Lista_Produtos;
-        private Button button1;
     }
 }

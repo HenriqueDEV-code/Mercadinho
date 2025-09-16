@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastrar));
             lblNome = new Label();
             txtNome = new TextBox();
             lblPreco = new Label();
@@ -101,7 +102,7 @@
             lblEstoque.Font = new Font("Segoe UI", 12F);
             lblEstoque.Location = new Point(50, 360);
             lblEstoque.Name = "lblEstoque";
-            lblEstoque.Size = new Size(66, 21);
+            lblEstoque.Size = new Size(68, 21);
             lblEstoque.TabIndex = 6;
             lblEstoque.Text = "Estoque:";
             // 
@@ -157,6 +158,7 @@
             Controls.Add(txtNome);
             Controls.Add(lblNome);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Cadastrar";

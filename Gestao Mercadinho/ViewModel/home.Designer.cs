@@ -154,6 +154,7 @@
             Controls.Add(panelDesktop);
             Controls.Add(paneltitleBar);
             Controls.Add(panelMenu);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "Home";
             StartPosition = FormStartPosition.CenterScreen;

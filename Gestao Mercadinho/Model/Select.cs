@@ -14,7 +14,7 @@ namespace Gestao_Mercadinho.Model
             _dbConfig = new DBConfig();
         }
 
-        // Exemplo de método para executar um SELECT e retornar os resultados em uma lista de dicionários
+        // método para executar um SELECT e retornar os resultados em uma lista de dicionários
         public List<Dictionary<string, object>> ExecutarSelect(string query)
         {
             var resultados = new List<Dictionary<string, object>>();
