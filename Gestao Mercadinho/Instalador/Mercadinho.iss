@@ -2,8 +2,8 @@
 ; Inno Setup Script - Gestao Mercadinho (net9.0-windows)
 ; ============================
 
-#define AppName        "Gest„o Mercadinho"
-#define AppPublisher   "Seu Nome ou Empresa"
+#define AppName        "Gest√£o Mercadinho"
+#define AppPublisher   "Mercadinho"
 #define AppExeName     "Gestao Mercadinho.exe"
 #define BuildDir       "C:\Users\Luis Henrique\OneDrive\Documentos\Visual Studio 2022\Templates\Codigo C#\Mercadinho\Gestao Mercadinho\bin\Release\net9.0-windows"
 #define AppVersion     "1.0.0"
@@ -31,11 +31,11 @@ SetupLogging=yes
 Name: "portuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 
 [Tasks]
-Name: "desktopicon"; Description: "Criar atalho na ¡rea de Trabalho"; GroupDescription: "Atalhos:"; Flags: unchecked
-Name: "runapp"; Description: "Executar {#AppName} apÛs concluir a instalaÁ„o"; GroupDescription: "FinalizaÁ„o:"; Flags: unchecked
+Name: "desktopicon"; Description: "Criar atalho na √Årea de Trabalho"; GroupDescription: "Atalhos:"; Flags: unchecked
+Name: "runapp"; Description: "Executar {#AppName} ap√≥s concluir a instala√ß√£o"; GroupDescription: "Finaliza√ß√£o:"; Flags: unchecked
 
 [Files]
-; Execut·vel
+; Execut√°vel
 Source: "{#BuildDir}\{#AppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 
 ; Todas as DLLs do publish
@@ -44,10 +44,10 @@ Source: "{#BuildDir}\*.dll"; DestDir: "{app}"; Flags: ignoreversion recursesubdi
 ; JSONs (inclui .deps.json e .runtimeconfig.json)
 Source: "{#BuildDir}\*.json"; DestDir: "{app}"; Flags: ignoreversion
 
-; Configs s„o opcionais ñ n„o falhar se n„o existirem
+; Configs s√£o opcionais ‚Äì n√£o falhar se n√£o existirem
 Source: "{#BuildDir}\*.config"; DestDir: "{app}"; Flags: ignoreversion skipifsourcedoesntexist
 
-; Subpasta runtimes È opcional em alguns publishes
+; Subpasta runtimes √© opcional em alguns publishes
 Source: "{#BuildDir}\runtimes\*"; DestDir: "{app}\runtimes"; Flags: ignoreversion recursesubdirs createallsubdirs skipifsourcedoesntexist
 
 [Icons]
