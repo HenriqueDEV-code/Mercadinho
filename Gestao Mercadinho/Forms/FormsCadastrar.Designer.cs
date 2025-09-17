@@ -33,8 +33,6 @@
             txtNome = new TextBox();
             lblPreco = new Label();
             txtPreco = new TextBox();
-            lblDescricao = new Label();
-            txtDescricao = new TextBox();
             lblEstoque = new Label();
             txtEstoque = new TextBox();
             btnSalvar = new Button();
@@ -77,30 +75,11 @@
             txtPreco.Size = new Size(200, 29);
             txtPreco.TabIndex = 3;
             // 
-            // lblDescricao
-            // 
-            lblDescricao.AutoSize = true;
-            lblDescricao.Font = new Font("Segoe UI", 12F);
-            lblDescricao.Location = new Point(50, 210);
-            lblDescricao.Name = "lblDescricao";
-            lblDescricao.Size = new Size(80, 21);
-            lblDescricao.TabIndex = 4;
-            lblDescricao.Text = "Descrição:";
-            // 
-            // txtDescricao
-            // 
-            txtDescricao.Font = new Font("Segoe UI", 12F);
-            txtDescricao.Location = new Point(50, 240);
-            txtDescricao.Multiline = true;
-            txtDescricao.Name = "txtDescricao";
-            txtDescricao.Size = new Size(400, 100);
-            txtDescricao.TabIndex = 5;
-            // 
             // lblEstoque
             // 
             lblEstoque.AutoSize = true;
             lblEstoque.Font = new Font("Segoe UI", 12F);
-            lblEstoque.Location = new Point(50, 360);
+            lblEstoque.Location = new Point(50, 217);
             lblEstoque.Name = "lblEstoque";
             lblEstoque.Size = new Size(68, 21);
             lblEstoque.TabIndex = 6;
@@ -109,7 +88,7 @@
             // txtEstoque
             // 
             txtEstoque.Font = new Font("Segoe UI", 12F);
-            txtEstoque.Location = new Point(50, 390);
+            txtEstoque.Location = new Point(50, 247);
             txtEstoque.Name = "txtEstoque";
             txtEstoque.Size = new Size(200, 29);
             txtEstoque.TabIndex = 7;
@@ -121,7 +100,7 @@
             btnSalvar.FlatStyle = FlatStyle.Flat;
             btnSalvar.Font = new Font("Segoe UI", 12F);
             btnSalvar.ForeColor = Color.White;
-            btnSalvar.Location = new Point(50, 450);
+            btnSalvar.Location = new Point(50, 307);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(120, 40);
             btnSalvar.TabIndex = 8;
@@ -135,7 +114,7 @@
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Segoe UI", 12F);
             btnCancelar.ForeColor = Color.White;
-            btnCancelar.Location = new Point(200, 450);
+            btnCancelar.Location = new Point(200, 307);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(120, 40);
             btnCancelar.TabIndex = 9;
@@ -146,13 +125,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(500, 550);
+            ClientSize = new Size(500, 383);
             Controls.Add(btnCancelar);
             Controls.Add(btnSalvar);
             Controls.Add(txtEstoque);
             Controls.Add(lblEstoque);
-            Controls.Add(txtDescricao);
-            Controls.Add(lblDescricao);
             Controls.Add(txtPreco);
             Controls.Add(lblPreco);
             Controls.Add(txtNome);
@@ -174,8 +151,6 @@
         private TextBox txtNome;
         private Label lblPreco;
         private TextBox txtPreco;
-        private Label lblDescricao;
-        private TextBox txtDescricao;
         private Label lblEstoque;
         private TextBox txtEstoque;
         private Button btnSalvar;

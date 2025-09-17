@@ -93,14 +93,13 @@ namespace Gestao_Mercadinho.Forms
             {
                 conn.Open();
                 
-                string query = @"INSERT INTO Produto (nome, preco, Descricao, quantidade) 
-                               VALUES (@nome, @preco, @Descricao, @quantidade)";
+                string query = @"INSERT INTO Produto (nome, preco, quantidade) 
+                               VALUES (@nome, @preco, @quantidade)";
                 
                 using (var cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@nome", txtNome.Text.Trim());
                     cmd.Parameters.AddWithValue("@preco", decimal.Parse(txtPreco.Text));
-                    cmd.Parameters.AddWithValue("@Descricao", txtDescricao.Text.Trim());
                     cmd.Parameters.AddWithValue("@quantidade", 
                         string.IsNullOrWhiteSpace(txtEstoque.Text) ? 0 : int.Parse(txtEstoque.Text));
                     
@@ -113,7 +112,6 @@ namespace Gestao_Mercadinho.Forms
         {
             txtNome.Clear();
             txtPreco.Clear();
-            txtDescricao.Clear();
             txtEstoque.Clear();
             txtNome.Focus();
         }
