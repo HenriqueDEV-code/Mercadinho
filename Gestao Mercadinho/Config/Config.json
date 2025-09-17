@@ -1,6 +1,6 @@
 {
   "ConnectionStrings": {
-    "MercadinhoDB": "Data Source=.\\SQLEXPRESS;Initial Catalog=Banco_Unip;Persist Security Info=True;User ID=sa;Password=Sfc@196722;Encrypt=False"
+    "MercadinhoDB": "Data Source=.\\SQLEXPRESS;Initial Catalog=Banco_Unip;Persist Security Info=True;User ID=sa;Password=SuaSenha;Encrypt=False"
   },
   "ProviderName": "System.Data.SqlClient"
 }
