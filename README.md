@@ -29,6 +29,7 @@ Permite cadastrar, listar, pesquisar, atualizar estoque e realizar operações b
 - Exemplo de string de conexão (`DBConfig.cs`):
 
 ```csharp
+Não esquece de ir no arquivo Config/Config.json e adicionar a senha do seu banco
 private const string ConnString = 
     "Data Source=.\\SQLEXPRESS;Initial Catalog=Banco_Unip;Persist Security Info=True;User ID=sa;Password=SuaSenha;Encrypt=False";
 
@@ -38,7 +39,7 @@ Clone o repositório:
 
 [git clone https://github.com/seuusuario/gestao-mercadinho.git](https://github.com/HenriqueDEV-code/Mercadinho.git)
 
-Va na pasta Inatalador e instala o .exe pelo o instalador que esta disponivel no repositorio.
+Vai na pasta chamado Instalador e Baixa o instalador. Pelo instalador você consegue usar o Mercadinho.
 
 Abra a solução no Visual Studio 2022 (ou superior).
 
@@ -70,6 +71,7 @@ Projeto desenvolvido por Luis Henrique
 📧 Email: henriquebelotti09@gmail.com
 
 🔗 GitHub: HenriqueDEV-code
+
 
 
 
