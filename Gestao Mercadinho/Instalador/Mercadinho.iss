@@ -3,7 +3,7 @@
 ; ============================
 
 #define AppName        "Gestão Mercadinho"
-#define AppPublisher   "Mercadinho"
+#define AppPublisher   "Seu Nome ou Empresa"
 #define AppExeName     "Gestao Mercadinho.exe"
 #define BuildDir       "C:\Users\Luis Henrique\OneDrive\Documentos\Visual Studio 2022\Templates\Codigo C#\Mercadinho\Gestao Mercadinho\bin\Release\net9.0-windows"
 #define AppVersion     "1.0.0"
@@ -50,6 +50,11 @@ Source: "{#BuildDir}\*.config"; DestDir: "{app}"; Flags: ignoreversion skipifsou
 ; Subpasta runtimes é opcional em alguns publishes
 Source: "{#BuildDir}\runtimes\*"; DestDir: "{app}\runtimes"; Flags: ignoreversion recursesubdirs createallsubdirs skipifsourcedoesntexist
 
+; Copiar a pasta Config do projeto
+Source: "C:\Users\Luis Henrique\OneDrive\Documentos\Visual Studio 2022\Templates\Codigo C#\Mercadinho\Gestao Mercadinho\Config\*"; \
+    DestDir: "{app}\Config"; \
+    Flags: ignoreversion recursesubdirs createallsubdirs
+
 [Icons]
 Name: "{group}\{#AppName}"; Filename: "{app}\{#AppExeName}"
 Name: "{autodesktop}\{#AppName}"; Filename: "{app}\{#AppExeName}"; Tasks: desktopicon
@@ -78,3 +83,4 @@ begin
     WizardForm.Close;
   end;
 end;
+ 
