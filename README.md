@@ -37,7 +37,7 @@ private const string ConnString =
 
 Clone o repositório:
 
-[git clone https://github.com/seuusuario/gestao-mercadinho.git](https://github.com/HenriqueDEV-code/Mercadinho.git)
+[git clone[ https://github.com/HenriqueDEV-code/Mercadinho.git ]
 
 Vai na pasta chamado Instalador e Baixa o instalador. Pelo instalador você consegue usar o Mercadinho.
 
@@ -71,6 +71,7 @@ Projeto desenvolvido por Luis Henrique
 📧 Email: henriquebelotti09@gmail.com
 
 🔗 GitHub: HenriqueDEV-code
+
 
 
 
